@@ -57,7 +57,9 @@ REST_FRAMEWORK = {  #장고 레스트프레임워크 설정
         'rest_framework.throttling.UserRateThrottle',
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'user': '10/min',
+        'user': '3/min', # 분당 3회로 제한.
+        'post': '5/min', # 분당 5회로 제한.
+        'comment': '30/min', # 분당 30회로 제한.
     },
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
